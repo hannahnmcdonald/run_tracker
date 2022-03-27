@@ -44,9 +44,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.SpaServices.Extensions": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[3.1.8, )"
+              "version": "[6.2.3, )"
             }
           },
           "imports": [

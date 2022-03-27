@@ -7,6 +7,7 @@ import Auth from '@okta/okta-vue'
 
 // our own imports
 import Hello from '@/components/Hello.vue';
+import RunRecords from '@/components/RunRecords.vue'
 
 Vue.use(Auth, {
   issuer: 'https://dev-60116582.okta.com/oauth2/default',
@@ -29,6 +30,14 @@ let router = new Router({
   	path: '/implicit/callback',
   	component: Auth.handleCallback()
 	},
+  {
+    path: '/run-records',
+    name: 'RunRecords',
+    component: RunRecords,
+    meta: {
+      requiresAuth: true
+    }
+  },
   ]
 })
 

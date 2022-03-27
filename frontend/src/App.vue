@@ -1,32 +1,76 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <header>
+      <b-navbar toggleable="md" type="light" variant="light">
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-brand to="/">Run Tracker</b-navbar-brand>
+        <b-collapse is-nav id="nav-collapse">
+          <b-navbar-nav>
+            <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
+            <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+
+  export default {
+    name: 'app',
+    data () {
+      return {
+        user: null
+      }
+    },
+    methods: {
+      login () {
+
+      },
+      async logout () {
+
+      }
+    }
+  }
+</script>
+
+<style>
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+main {
+  text-align: center;
+  margin-top: 40px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+header {
+  margin: 0;
+  height: 56px;
+  padding: 0 16px 0 24px;
+  background-color: #f8f9fa;
+  color: #ffffff;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+header span {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: .02em;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding-top: 16px;
 }
 </style>

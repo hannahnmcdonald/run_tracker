@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 
-
 namespace AspNetCore {
   public class ApplicationDbContext : DbContext
   {
